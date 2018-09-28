@@ -1,0 +1,5 @@
+<form [formGroup]="inputsForm">
+  <input placeholder="Наименование платежа" formControlName="name" type="text">
+  <input placeholder="Стоимость" formControlName="price" type="number">
+  <button [disabled]="!inputsForm.valid" (click)="onAddClick()">Добавить</button>
+</form>
