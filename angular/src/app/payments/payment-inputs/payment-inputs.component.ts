@@ -23,18 +23,13 @@ export class PaymentInputsComponent implements OnInit {
     this.inputsForm = this.formBuilder.group({
       name: [null, Validators.required],
       price: [null, (valControl) => {
-        return typeof valControl.value === 'number' && Number(valControl.value) >= 0 ? null : 'error'
+        return typeof valControl.value === 'number' && Number(valControl.value) >= 0 ? null : 'invalid_number_format'
       }]
     })
   }
 
   public onAddClick(): void {
-    const inputsForm: FormGroup = this.inputsForm;
-
-    this.paymentDataService.addPosition({
-      name: inputsForm.get('name').value,
-      price: inputsForm.get('price').value
-    });
+    this.paymentDataService.addPosition(this.inputsForm.value);
     this.inputsForm.reset();
   }
 }

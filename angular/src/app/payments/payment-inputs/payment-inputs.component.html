@@ -1,5 +1,11 @@
-<form [formGroup]="inputsForm">
-  <input placeholder="Наименование платежа" formControlName="name" type="text">
-  <input placeholder="Стоимость" formControlName="price" type="number">
+<form class="input-form" [formGroup]="inputsForm">
+  <div class="input-block">
+    <input placeholder="Наименование платежа" formControlName="name" type="text">
+    <p appErrorCheck [inputControl]="this.inputsForm.get('name')">Некорректное имя</p>
+  </div>
+  <div class="input-block">
+    <input placeholder="Стоимость" formControlName="price" type="number">
+    <p  appErrorCheck [inputControl]="this.inputsForm.get('price')">Некорректная цена</p>
+  </div>
   <button [disabled]="!inputsForm.valid" (click)="onAddClick()">Добавить</button>
 </form>
