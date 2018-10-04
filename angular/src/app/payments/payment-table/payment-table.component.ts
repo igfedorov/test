@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { PaymentDataService } from '../shared/payment-data.service'
-import { Payments } from '../payments'
+import { PaymentDataService } from '../shared/payment-data.service';
+import { Payments } from '../payments';
 import { Subject } from "rxjs";
 import { takeUntil } from 'rxjs/operators';
 

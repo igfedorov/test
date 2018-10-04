@@ -10,6 +10,4 @@ export class ErrorCheckDirective {
   @HostBinding('style.visibility') get visiblity(): string {
     return this.inputControl.invalid && this.inputControl.touched ? 'visible' : 'hidden'
   }
-
-
 }

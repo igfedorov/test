@@ -1,5 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
+import { PaymentDataService } from '../shared/payment-data.service';
+import { ErrorCheckDirective } from '../shared/error-check.directive';
 import { PaymentInputsComponent } from './payment-inputs.component';
 
 describe('PaymentInputsComponent', () => {
@@ -8,7 +11,9 @@ describe('PaymentInputsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PaymentInputsComponent ]
+      imports: [ ReactiveFormsModule ],
+      declarations: [ PaymentInputsComponent, ErrorCheckDirective ],
+      providers: [ PaymentDataService ]
     })
     .compileComponents();
   }));
